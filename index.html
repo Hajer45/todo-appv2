@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- import fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
     <title>To do app</title>
@@ -14,17 +15,21 @@
     <div class="container">
         <h3>To do list</h3>
         <div class="input-content">
-            <input type="text" name="todo" >
-            <input type="button" value="Add">
+            <input type="text" name="todo" class="todo-content" >
+            <input type="button" value="Add" class="btn">
         </div>
         <div class="todo-container">
            <ul class="box">
-            <li class="todo">Task </li>
-            <li class="todo">Task </li>
-            <li class="todo">Task </li>
+            <li class="todo"><i class="fas fa-trash-alt"></i>Task 
+                </li>
+            <li class="todo"><i class="fas fa-trash-alt"></i>Task </li>
+            <li class="todo"><i class="fas fa-trash-alt"></i>Task</li>
           
            </ul>
         </div>
     </div>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/b42b768e55.js" crossorigin="anonymous"></script>
+
 </body>
 </html>

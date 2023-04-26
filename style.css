@@ -72,8 +72,34 @@ body{
     border-radius: 5px;
     
 }
-.todo:hover {
-    background-color: #B3E5BE;
-    color:#ffffff;
-    
+li {
+    position:relative;
 }
+
+li i {
+    height: 30px;
+    width:30px;
+    position:absolute;
+    top:0.5rem;
+    left:0;
+   
+
+}
+.todo:hover {
+    background-color: #7C9070;
+    color:#ffffff;
+    animation: flop 0.3s ease-in-out forwards;
+  }
+    
+  
+  @keyframes flop {
+    0% {
+      transform: none;
+    }
+    50% {
+      transform: translate(10px);
+    }
+    100% {
+      transform: translate(-10px);
+    }
+  }
