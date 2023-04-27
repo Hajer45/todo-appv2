@@ -85,6 +85,9 @@ li i {
    
 
 }
+.done {
+    background-color: #DBE4C6;
+}
 .todo-container{
     position: relative;
 }
