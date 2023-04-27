@@ -85,6 +85,15 @@ li i {
    
 
 }
+.todo-container{
+    position: relative;
+}
+.numTask {
+    position:absolute;
+    right:0.5rem;
+    top:0.25rem;
+    color:#7C9070;
+}
 .todo:hover {
     background-color: #7C9070;
     color:#ffffff;

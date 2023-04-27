@@ -1,6 +1,7 @@
 let input = document.querySelector(".todo-content");
 let btn = document.querySelector(".btn");
 let list = document.querySelector(".box");
+let nbTask = document.querySelector(".numTask");
 let tasks =[];
 
 btn.onclick = function(){
@@ -34,4 +35,12 @@ function addTaskToPage(tasks){
 
 
     })
+    let len ;
+    if(tasks.length>1)
+        len = `${tasks.length} Tasks`
+    else
+        len = `${tasks.length} Task`
+     
+    nbTask.innerHTML=`<p>${len}</p>`;
+
 };
