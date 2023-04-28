@@ -11,6 +11,19 @@ btn.onclick = function(){
         input.value = "";
     }
 };
+list.addEventListener("click",(e)=>{
+    if(e.target.classList.contains("fa-trash-alt")){
+       
+        // remove from local storage
+        deleteTask(e.target.parentElement.getAttribute("id"));
+         // remove from page
+         e.target.parentElement.remove();
+         let l = tasks.length;
+         countTask(l);
+        
+
+    }
+});
 function addTask(taskTitle){
     const task = {
         id:Date.now(),
@@ -39,12 +52,7 @@ function addTaskToPage(tasks){
         li.appendChild(i);
         list.append(li);
     })
-    let len ;
-    if(size>1)
-        len = `${size} Tasks`
-    else
-        len = `${size} Task`
-    nbTask.innerHTML=`<p>${len}</p>`;
+    countTask(size);
 };
 function addToLocalStorage(tasks){
     window.localStorage.setItem("tasks",JSON.stringify(tasks));
@@ -56,3 +64,15 @@ function getDataFromLocalStorage(){
          addTaskToPage(tasks);
     }
 };
+function deleteTask(id){
+    tasks = tasks.filter((task) => task.id != id);
+    addToLocalStorage(tasks);
+}
+function countTask(size){
+    let len ;
+    if(size>1)
+        len = `${size} Tasks`
+    else
+        len = `${size} Task`
+    nbTask.innerHTML=`<p>${len}</p>`;
+}
