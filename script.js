@@ -13,15 +13,16 @@ btn.onclick = function(){
 };
 list.addEventListener("click",(e)=>{
     if(e.target.classList.contains("fa-trash-alt")){
-       
         // remove from local storage
         deleteTask(e.target.parentElement.getAttribute("id"));
          // remove from page
          e.target.parentElement.remove();
          let l = tasks.length;
          countTask(l);
-        
-
+    }
+    if(e.target.classList.contains("todo")){
+        toggleStatus(e.target.getAttribute("id"));
+        e.target.classList.toggle("done");
     }
 });
 function addTask(taskTitle){
@@ -43,7 +44,6 @@ function addTaskToPage(tasks){
         li.className="todo";
         if(elm.completed){
             li.className = "done todo";
-            size--;
         }
         li.setAttribute("id",elm.id);
         li.appendChild(document.createTextNode(elm.title));
@@ -67,7 +67,15 @@ function getDataFromLocalStorage(){
 function deleteTask(id){
     tasks = tasks.filter((task) => task.id != id);
     addToLocalStorage(tasks);
-}
+};
+function toggleStatus(taskId){
+    for(let i =0;i<tasks.length;i++){
+        if(tasks[i].id == taskId){
+            tasks[i].completed == false ? tasks[i].completed = true : tasks[i].completed = false;
+        }
+    }
+    addToLocalStorage(tasks);
+};
 function countTask(size){
     let len ;
     if(size>1)
@@ -75,4 +83,4 @@ function countTask(size){
     else
         len = `${size} Task`
     nbTask.innerHTML=`<p>${len}</p>`;
-}
+};
