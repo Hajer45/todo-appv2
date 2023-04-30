@@ -77,8 +77,8 @@ li {
 }
 
 li i {
-    height: 30px;
-    width:30px;
+    height: 2rem;
+    width:2rem;
     position:absolute;
     top:0.5rem;
     left:0;
@@ -96,6 +96,8 @@ li i {
     right:0.5rem;
     top:0.25rem;
     color:#7C9070;
+    
+    
 }
 .todo:hover {
     background-color: #7C9070;
@@ -115,3 +117,17 @@ li i {
       transform: translate(-10px);
     }
   }
+/* responsive design */
+@media (max-width:700px){
+    .container {
+        width:70%;
+    
+    }    
+    .todo-container {
+        padding: 1rem;
+    }
+    .numTask {
+        top:85%;
+    }
+   
+}
